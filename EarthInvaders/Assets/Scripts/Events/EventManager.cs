@@ -28,5 +28,26 @@ public static class EventManager {
         }
     }
 
+    // EnemyDead support
+    static List<Enemy> enemyDeadInvokers = new List<Enemy>();
+    static List<UnityAction<Enemy>> enemyDeadListeners = new List<UnityAction<Enemy>>();
+
+    public static void AddEnemyDeadInvoker(Enemy invoker)
+    {
+        enemyDeadInvokers.Add(invoker);
+        foreach (UnityAction<Enemy> listener in enemyDeadListeners)
+        {
+            invoker.AddEnemyDeadListener(listener);
+        }
+    }
+
+    public static void AddEnemyDeadListener(UnityAction<Enemy> listener)
+    {
+        enemyDeadListeners.Add(listener);
+        foreach (Enemy invoker in enemyDeadInvokers)
+        {
+            invoker.AddEnemyDeadListener(listener);
+        }
+    }
 
 }

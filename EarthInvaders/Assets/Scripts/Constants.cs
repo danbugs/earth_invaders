@@ -11,6 +11,7 @@ public static class Constants {
 
     // Soldier Constants
     public static int SoldierDamage = 100;
+    public static int SoldierPoints = 10;
 
     // Commander Constants
     public static int CommanderDamage = 10;

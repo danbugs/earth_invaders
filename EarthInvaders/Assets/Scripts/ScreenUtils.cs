@@ -8,6 +8,7 @@ public static class ScreenUtils {
     static float screenLeft;
     static float screenTop;
     static float screenBottom;
+    static float zWorld;
 
     public static float ScreenRight
     {
@@ -28,6 +29,10 @@ public static class ScreenUtils {
     {
         get { return screenBottom; }
     }
+    public static float ZWorld
+    {
+        get { return zWorld; }
+    }
 
     public static void Initialize()
     {
@@ -47,5 +52,7 @@ public static class ScreenUtils {
         screenLeft = lowerLeftCornerWorld.x;
         screenBottom = lowerRightCornerWorld.y;
         screenTop = upperLeftCornerWorld.y;
+
+        zWorld = lowerLeftCornerWorld.z;
     }
 }
