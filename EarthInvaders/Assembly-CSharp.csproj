@@ -67,10 +67,14 @@
     <Compile Include="Assets\Scripts\Enemy Family\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy Family\EnemyGraph.cs" />
     <Compile Include="Assets\Scripts\Enemy Family\EnemyGraphBuilder.cs" />
+    <Compile Include="Assets\Scripts\Enemy Family\EnemyMovementManager.cs" />
+    <Compile Include="Assets\Scripts\Enemy Family\EnemyMovements.cs" />
     <Compile Include="Assets\Scripts\Enemy Family\EnemyNode.cs" />
     <Compile Include="Assets\Scripts\Enemy Family\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Enemy Family\Soldier.cs" />
     <Compile Include="Assets\Scripts\Events\EnemyDead.cs" />
+    <Compile Include="Assets\Scripts\Events\EnemyMove.cs" />
+    <Compile Include="Assets\Scripts\Events\EnemyReady.cs" />
     <Compile Include="Assets\Scripts\Events\EventManager.cs" />
     <Compile Include="Assets\Scripts\Events\PlayerShoot.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
@@ -78,6 +82,7 @@
     <Compile Include="Assets\Scripts\Projectile Family\PlayerProjectile.cs" />
     <Compile Include="Assets\Scripts\Projectile Family\Projectile.cs" />
     <Compile Include="Assets\Scripts\ScreenUtils.cs" />
+    <Compile Include="Assets\Scripts\Timer.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/chiarld/Code/Unity/EarthInvaders/EarthInvaders/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

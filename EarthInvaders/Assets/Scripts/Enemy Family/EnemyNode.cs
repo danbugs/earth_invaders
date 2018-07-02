@@ -59,19 +59,6 @@ public class EnemyNode<T>
         return true;
     }
 
-    public bool RemoveAt(int index)
-    {
-        if (index < Count)
-        {
-            return false;
-        }
-        else
-        {
-            neighbors.RemoveAt(index);
-        }
-        return true;
-    }
-
     public void RemoveAllNeighbors()
     {
         for (int i = neighbors.Count - 1; i >= 0; i--)

@@ -16,5 +16,8 @@ public static class Constants {
     // Commander Constants
     public static int CommanderDamage = 10;
 
+    // General Enemy Constants
+    public static int EnemyReadyClock = 1;
+    public static int EnemyMove = 1;
 
 }

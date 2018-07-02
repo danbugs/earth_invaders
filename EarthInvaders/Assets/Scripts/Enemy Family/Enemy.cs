@@ -13,6 +13,11 @@ public class Enemy : MonoBehaviour {
     BoxCollider2D boxCollider2D;
 
     EnemyDead enemyDeadEvent = new EnemyDead();
+    EnemyReady enemyReadyEvent = new EnemyReady();
+
+    // movement support
+    Vector2 movementHorizontalPosition;
+    Vector2 movementVerticalPosition;
 
     public Vector2 Position
     {
@@ -36,6 +41,9 @@ public class Enemy : MonoBehaviour {
         rb2D = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
         EventManager.AddEnemyDeadInvoker(this);
+
+        EventManager.AddEnemyMoveListener(Move);
+
 	}
 
     // Update is called once per frame
@@ -43,11 +51,35 @@ public class Enemy : MonoBehaviour {
     {
     }
 
+    private void FixedUpdate()
+    {
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         enemyDeadEvent.Invoke(this);
         Destroy(gameObject);
+    }
+
+    void Move(EnemyMovements move)
+    {
+        movementHorizontalPosition = new Vector2(transform.position.x + Constants.EnemyMove, transform.position.y);
+        movementVerticalPosition = new Vector2(transform.position.x, transform.position.y - Constants.EnemyMove);
+        switch (move)
+        {
+            case EnemyMovements.Right:
+                movementHorizontalPosition = new Vector2(transform.position.x + Constants.EnemyMove, transform.position.y);
+                rb2D.MovePosition(movementHorizontalPosition);
+                break;
+            case EnemyMovements.Left:
+                movementHorizontalPosition = new Vector2(transform.position.x - Constants.EnemyMove, transform.position.y);
+                rb2D.MovePosition(movementHorizontalPosition);
+                break;
+            default:
+                rb2D.MovePosition(movementVerticalPosition);
+                break;
+        }
+
     }
 
     // event related methods
@@ -56,5 +88,6 @@ public class Enemy : MonoBehaviour {
     {
         enemyDeadEvent.AddListener(listener);
     }
+
 
 }

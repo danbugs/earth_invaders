@@ -2,16 +2,13 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy Family/EnemySpawner.cs">
     <Files>
-      <File FileName="Assets/Scripts/Enemy Family/Enemy.cs" Line="38" Column="48" />
-      <File FileName="Assets/Scripts/Enemy Family/Soldier.cs" Line="16" Column="37" />
-      <File FileName="Assets/Scripts/Constants.cs" Line="17" Column="44" />
-      <File FileName="Assets/Scripts/Enemy Family/EnemyGraphBuilder.cs" Line="58" Column="10" />
+      <File FileName="Assets/Scripts/Enemy Family/Enemy.cs" Line="81" Column="10" />
+      <File FileName="Assets/Scripts/Enemy Family/EnemyMovementManager.cs" Line="21" Column="2" />
+      <File FileName="Assets/Scripts/Constants.cs" Line="22" Column="5" />
+      <File FileName="Assets/Scripts/Events/EventManager.cs" Line="77" Column="1" />
+      <File FileName="Assets/Scripts/Enemy Family/EnemyMovements.cs" Line="7" Column="11" />
+      <File FileName="Assets/Scripts/Enemy Family/EnemyGraphBuilder.cs" Line="53" Column="1" />
       <File FileName="Assets/Scripts/Enemy Family/EnemySpawner.cs" Line="31" Column="6" />
-      <File FileName="Assets/Scripts/ScreenUtils.cs" Line="33" Column="6" />
-      <File FileName="Assets/Scripts/Projectile Family/Projectile.cs" Line="29" Column="2" />
-      <File FileName="Assets/Scripts/Events/EventManager.cs" Line="47" Column="27" />
-      <File FileName="Assets/Scripts/Events/EnemyDead.cs" Line="7" Column="1" />
-      <File FileName="Assets/Scripts/Enemy Family/EnemyNode.cs" Line="64" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

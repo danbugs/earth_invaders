@@ -50,4 +50,27 @@ public static class EventManager {
         }
     }
 
+    // EnemyMove support
+    static List<EnemyMovementManager> enemyMoveInvokers = new List<EnemyMovementManager>();
+    static List<UnityAction<EnemyMovements>> enemyMoveListeners = new List<UnityAction<EnemyMovements>>();
+
+    public static void AddEnemyMoveInvoker(EnemyMovementManager invoker)
+    {
+        enemyMoveInvokers.Add(invoker);
+        foreach (UnityAction<EnemyMovements> listener in enemyMoveListeners)
+        {
+            invoker.AddEnemyMoveListener(listener);
+        }
+    }
+
+    public static void AddEnemyMoveListener(UnityAction<EnemyMovements> listener)
+    {
+        enemyMoveListeners.Add(listener);
+        foreach (EnemyMovementManager invoker in enemyMoveInvokers)
+        {
+            invoker.AddEnemyMoveListener(listener);
+        }
+    }
+
+
 }

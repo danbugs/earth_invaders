@@ -15,7 +15,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        for (int i = -7; i < 7; i++)
+        for (int i = -8; i < 7; i++)
         {
             for (int j = 3; j > 0; j--)
             {
