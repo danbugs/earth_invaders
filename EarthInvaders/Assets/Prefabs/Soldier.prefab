@@ -22,8 +22,9 @@ GameObject:
   - component: {fileID: 212837646702413300}
   - component: {fileID: 50736238974833364}
   - component: {fileID: 61002760747261078}
+  - component: {fileID: 210731313354051652}
   - component: {fileID: 114913721450788766}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Soldier
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -100,6 +101,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  type: 
+--- !u!210 &210731313354051652
+SortingGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1563401309558424}
+  m_Enabled: 1
+  m_SortingLayerID: 1068736879
+  m_SortingLayer: 2
+  m_SortingOrder: 0
 --- !u!212 &212837646702413300
 SpriteRenderer:
   m_ObjectHideFlags: 1

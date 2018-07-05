@@ -20,4 +20,9 @@ public class PlayerProjectile : Projectile {
 	void Update () {
 		
 	}
+
+    protected override void OnTriggerEnter2D(Collider2D other)
+    {
+        // DO NOTHING //
+    }
 }

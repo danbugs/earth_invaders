@@ -1,14 +1,13 @@
 ﻿<Properties StartupConfiguration="{CB39048E-0BDF-2EFA-95D5-ECB95FFF1C1D}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy Family/EnemySpawner.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Events/EventManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Enemy Family/Enemy.cs" Line="81" Column="10" />
-      <File FileName="Assets/Scripts/Enemy Family/EnemyMovementManager.cs" Line="21" Column="2" />
-      <File FileName="Assets/Scripts/Constants.cs" Line="22" Column="5" />
-      <File FileName="Assets/Scripts/Events/EventManager.cs" Line="77" Column="1" />
-      <File FileName="Assets/Scripts/Enemy Family/EnemyMovements.cs" Line="7" Column="11" />
-      <File FileName="Assets/Scripts/Enemy Family/EnemyGraphBuilder.cs" Line="53" Column="1" />
-      <File FileName="Assets/Scripts/Enemy Family/EnemySpawner.cs" Line="31" Column="6" />
+      <File FileName="Assets/Scripts/HUD.cs" Line="17" Column="28" />
+      <File FileName="Assets/Scripts/Events/GameOver.cs" Line="9" Column="1" />
+      <File FileName="Assets/Scripts/PlayerShootingManager.cs" Line="16" Column="38" />
+      <File FileName="Assets/Scripts/SceneHandler.cs" Line="17" Column="17" />
+      <File FileName="Assets/Scripts/Events/EventManager.cs" Line="139" Column="6" />
+      <File FileName="Assets/Scripts/Enemy Family/EnemyGraphBuilder.cs" Line="121" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

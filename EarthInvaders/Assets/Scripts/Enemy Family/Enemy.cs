@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Enemy : MonoBehaviour {
+public abstract class Enemy : MonoBehaviour {
 
     protected int damage;
     protected int points;
-    protected int id;
+    protected bool shootRan = false;
+    protected bool currentlyShooting = false;
 
-    Rigidbody2D rb2D;
-    BoxCollider2D boxCollider2D;
+    public int id;
+    public string type;
+
+    protected Rigidbody2D rb2D;
+    protected BoxCollider2D boxCollider2D;
+    protected SpriteRenderer spriteRenderer;
 
     EnemyDead enemyDeadEvent = new EnemyDead();
     EnemyReady enemyReadyEvent = new EnemyReady();
@@ -36,13 +41,22 @@ public class Enemy : MonoBehaviour {
         set { id = value; }
     }
 
+    public string Type
+    {
+        get { return type; }
+        set { type = value; }
+    }
+
     // Use this for initialization
     protected virtual void Start () {
         rb2D = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
-        EventManager.AddEnemyDeadInvoker(this);
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
+        EventManager.AddEnemyDeadInvoker(this);
         EventManager.AddEnemyMoveListener(Move);
+        EventManager.AddEnemyShootListener(Shoot);
+
 
 	}
 
@@ -82,12 +96,15 @@ public class Enemy : MonoBehaviour {
 
     }
 
+    protected abstract void Shoot(int checkId);
+
     // event related methods
 
     public void AddEnemyDeadListener(UnityAction<Enemy> listener)
     {
         enemyDeadEvent.AddListener(listener);
     }
+
 
 
 }

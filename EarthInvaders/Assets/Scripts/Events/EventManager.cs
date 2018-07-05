@@ -72,5 +72,70 @@ public static class EventManager {
         }
     }
 
+    // EnemyShoot support
+    static List<EnemyGraphBuilder> enemyShootInvokers = new List<EnemyGraphBuilder>();
+    static List<UnityAction<int>> enemyShootListeners = new List<UnityAction<int>>();
+
+    public static void AddEnemyShootInvoker(EnemyGraphBuilder invoker)
+    {
+        enemyShootInvokers.Add(invoker);
+        foreach (UnityAction<int> listener in enemyShootListeners)
+        {
+            invoker.AddEnemyShootListener(listener);
+        }
+    }
+
+    public static void AddEnemyShootListener(UnityAction<int> listener)
+    {
+        enemyShootListeners.Add(listener);
+        foreach (EnemyGraphBuilder invoker in enemyShootInvokers)
+        {
+            invoker.AddEnemyShootListener(listener);
+        }
+    }
+
+    // Hurt support
+    static List<Projectile> hurtInvokers = new List<Projectile>();
+    static List<UnityAction<int>> hurtListeners = new List<UnityAction<int>>();
+
+    public static void AddHurtInvokers(Projectile invoker)
+    {
+        hurtInvokers.Add(invoker);
+        foreach (UnityAction<int> listener in hurtListeners)
+        {
+            invoker.AddHurtListener(listener);
+        }
+    }
+
+    public static void AddHurtListeners(UnityAction<int> listener)
+    {
+        hurtListeners.Add(listener);
+        foreach (Projectile invoker in hurtInvokers)
+        {
+            invoker.AddHurtListener(listener);
+        }
+    }
+
+    // GameOver support
+    static List<HUD> gameOverInvokers = new List<HUD>();
+    static List<UnityAction<int>> gameOverListeners = new List<UnityAction<int>>();
+
+    public static void AddGameOverInvokers(HUD invoker)
+    {
+        gameOverInvokers.Add(invoker);
+        foreach (UnityAction<int> listener in gameOverListeners)
+        {
+            invoker.AddGameOverListener(listener);
+        }
+    }
+
+    public static void AddGameOverListeners(UnityAction<int> listener)
+    {
+        gameOverListeners.Add(listener);
+        foreach (HUD invoker in gameOverInvokers)
+        {
+            invoker.AddGameOverListener(listener);
+        }
+    }
 
 }
