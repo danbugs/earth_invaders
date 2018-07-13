@@ -9,6 +9,8 @@ public class HUD : MonoBehaviour {
     static int playerHealth = 1000;
     [SerializeField]
     Text playerHealthDisplay;
+    [SerializeField]
+    Text pointsDisplay;
     string playerHealthPrefix = "Health: ";
     bool gameFinished = false;
 
@@ -22,6 +24,7 @@ public class HUD : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         EventManager.AddHurtListeners(UpdateHealth);
+        EventManager.AddGameOverInvokers(this);
         playerHealthDisplay.text = playerHealthPrefix + playerHealth.ToString();
 	}
 	

@@ -1,0 +1,2 @@
+/Users/chiarld/Code/Unity/EarthInvaders/EarthInvaders/obj/Debug/Assembly-CSharp.csprojResolveAssemblyReference.cache
+/Users/chiarld/Code/Unity/EarthInvaders/EarthInvaders/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache
