@@ -40,7 +40,8 @@ public class MenuManager : MonoBehaviour {
     public void ClickPlay()
     {
         UpdateScene();
-        resetPlayerHealthEvent.Invoke();
+        Time.timeScale = 1;
+        HUD.PlayerHealth = Constants.MaxPlayerHealth; // fix this with reserPlayerHealth event later (resetPlayerHealthEvent.Invoke();)
         SceneManager.LoadScene("Level1");
         UpdateScene();
     }
@@ -69,6 +70,8 @@ public class MenuManager : MonoBehaviour {
     public void GoToLvl1()
     {
         UpdateScene();
+        Time.timeScale = 1;
+        HUD.PlayerHealth = Constants.MaxPlayerHealth; // fix this with reserPlayerHealth event later (resetPlayerHealthEvent.Invoke();)
         SceneManager.LoadScene("Level1");
         UpdateScene();
     }
@@ -76,6 +79,8 @@ public class MenuManager : MonoBehaviour {
     public void GoToLvl2()
     {
         UpdateScene();
+        Time.timeScale = 1;
+        HUD.PlayerHealth = Constants.MaxPlayerHealth; // fix this with reserPlayerHealth event later (resetPlayerHealthEvent.Invoke();)
         SceneManager.LoadScene("Level2");
         UpdateScene();
     }
@@ -83,8 +88,6 @@ public class MenuManager : MonoBehaviour {
     public void GoToMainMenu()
     {
         UpdateScene();
-        Time.timeScale = 1;
-        HUD.PlayerHealth = Constants.MaxPlayerHealth; // fix this with reserPlayerHealth event later
         SceneManager.LoadScene("MainMenu");
         UpdateScene();
     }

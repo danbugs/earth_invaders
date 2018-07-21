@@ -219,7 +219,7 @@ Prefab:
     - target: {fileID: 114417753953494922, guid: d02471293a24841a8be5b32df0a95af6,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClickPlay
+      value: GoToMainMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d02471293a24841a8be5b32df0a95af6, type: 2}

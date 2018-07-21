@@ -1,16 +1,16 @@
 ﻿<Properties StartupConfiguration="{CB39048E-0BDF-2EFA-95D5-ECB95FFF1C1D}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PauseGame.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Menus/MenuManager.cs">
     <Files>
       <File FileName="Assets/Scripts/Menus/MenuManager.cs" Line="95" Column="28" />
       <File FileName="Assets/Scripts/Events/EventManager.cs" Line="255" Column="2" />
       <File FileName="Assets/Scripts/Events/ChangeLevel.cs" Line="7" Column="1" />
-      <File FileName="Assets/Scripts/Enemy Family/EnemyGraphBuilder.cs" Line="12" Column="5" />
+      <File FileName="Assets/Scripts/Enemy Family/EnemyGraphBuilder.cs" Line="12" Column="1" />
       <File FileName="Assets/Scripts/Events/AllEnemiesDead.cs" Line="7" Column="1" />
       <File FileName="Assets/Scripts/Menus/Menus.cs" Line="16" Column="1" />
       <File FileName="Assets/Scripts/Events/GameWin.cs" Line="7" Column="1" />
       <File FileName="Assets/Scripts/PauseGame.cs" Line="31" Column="10" />
-      <File FileName="Assets/Scripts/HUD.cs" Line="59" Column="5" />
+      <File FileName="Assets/Scripts/HUD.cs" Line="59" Column="1" />
       <File FileName="Assets/Scripts/Constants.cs" Line="18" Column="42" />
       <File FileName="Assets/Scripts/Events/ResetPlayerHealth.cs" Line="7" Column="1" />
       <File FileName="Assets/Scripts/Events/ResumeGameplay.cs" Line="7" Column="1" />
