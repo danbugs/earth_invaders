@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public class HUD : MonoBehaviour {
+public class HUD : MonoBehaviour
+{
 
-    static int playerHealth = 1000;
+    static int playerHealth = Constants.MaxPlayerHealth;
     [SerializeField]
     Text playerHealthDisplay;
     [SerializeField]
@@ -19,18 +20,22 @@ public class HUD : MonoBehaviour {
     public static int PlayerHealth
     {
         get { return playerHealth; }
+        set { playerHealth = value; }
     }
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         EventManager.AddHurtListeners(UpdateHealth);
         EventManager.AddGameOverInvokers(this);
+        EventManager.AddResetPlayerHealthListeners(ResetHealth);
         playerHealthDisplay.text = playerHealthPrefix + playerHealth.ToString();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+    }
 
     void UpdateHealth(int damageTaken)
     {
@@ -42,6 +47,15 @@ public class HUD : MonoBehaviour {
             gameFinished = true;
         }
     }
+
+    void ResetHealth()
+    {
+        playerHealth = Constants.MaxPlayerHealth;
+        Debug.Log(playerHealth);
+        playerHealthDisplay.text = playerHealthPrefix + playerHealth.ToString();
+
+    }
+
 
     // event related methods
 

@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Protector
   - Soldier
+  - Pause
+  - MenuManager
   layers:
   - Default
   - TransparentFX

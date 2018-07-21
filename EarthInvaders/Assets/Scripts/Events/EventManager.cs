@@ -138,4 +138,118 @@ public static class EventManager {
         }
     }
 
+    //ChangeLevel support
+    static List<MenuManager> changeLevelInvokers = new List<MenuManager>();
+    static List<UnityAction> changeLevelListeners = new List<UnityAction>();
+
+    public static void AddChangeLevelInvokers(MenuManager invoker)
+    {
+        changeLevelInvokers.Add(invoker);
+        foreach (UnityAction listener in changeLevelListeners)
+        {
+            invoker.AddChangeLevelListeners(listener);
+        }
+    }
+
+    public static void AddChangeLevelListener(UnityAction listener)
+    {
+        changeLevelListeners.Add(listener);
+        foreach (MenuManager invoker in changeLevelInvokers)
+        {
+            invoker.AddChangeLevelListeners(listener);
+        }
+    }
+
+    //AllEnemiesDead support
+
+    static List<EnemyGraphBuilder> allEnemiesDeadInvokers = new List<EnemyGraphBuilder>();
+    static List<UnityAction> allEnemiesDeadListeners = new List<UnityAction>();
+
+    public static void AddAllEnemiesDeadInvokers(EnemyGraphBuilder invoker)
+    {
+        allEnemiesDeadInvokers.Add(invoker);
+        foreach (UnityAction listener in allEnemiesDeadListeners)
+        {
+            invoker.AddAllEnemiesdeadListener(listener);
+        }
+    }
+
+    public static void AddAllEnemiesDeadListeners(UnityAction listener)
+    {
+        allEnemiesDeadListeners.Add(listener);
+        foreach (EnemyGraphBuilder invoker in allEnemiesDeadInvokers)
+        {
+            invoker.AddAllEnemiesdeadListener(listener);
+        }
+    }
+
+    //GameWin support
+
+    static List<EnemyGraphBuilder> gameWinInvokers = new List<EnemyGraphBuilder>();
+    static List<UnityAction> gameWinListeners = new List<UnityAction>();
+
+    public static void AddGameWinInvokers(EnemyGraphBuilder invoker)
+    {
+        gameWinInvokers.Add(invoker);
+        foreach (UnityAction listener in gameWinListeners)
+        {
+            invoker.AddGameWinListener(listener);
+        }
+    }
+
+    public static void AddGameWinListeners(UnityAction listener)
+    {
+        gameWinListeners.Add(listener);
+        foreach (EnemyGraphBuilder invoker in gameWinInvokers)
+        {
+            invoker.AddGameWinListener(listener);
+        }
+    }
+
+    //ResetPlayerHealth support
+
+    static List<MenuManager> resetPlayerHealthInvokers = new List<MenuManager>();
+    static List<UnityAction> resetPlayerHealthListeners = new List<UnityAction>();
+
+    public static void AddResetPlayerHealthInvokers(MenuManager invoker)
+    {
+        resetPlayerHealthInvokers.Add(invoker);
+        foreach (UnityAction listener in resetPlayerHealthListeners)
+        {
+            invoker.AddResetPlayerHealthListener(listener);
+        }
+    }
+
+    public static void AddResetPlayerHealthListeners(UnityAction listener)
+    {
+        resetPlayerHealthListeners.Add(listener);
+        foreach (MenuManager invoker in resetPlayerHealthInvokers)
+        {
+            invoker.AddResetPlayerHealthListener(listener);
+        }
+    }
+
+    //ResumeGameplay support
+
+    static List<MenuManager> resumeGameplayInvokers = new List<MenuManager>();
+    static List<UnityAction> resumeGameplayListerners = new List<UnityAction>();
+
+    public static void AddResumeGameplayInvokers(MenuManager invoker)
+    {
+        resumeGameplayInvokers.Add(invoker);
+        foreach (UnityAction listener in resumeGameplayListerners)
+        {
+            invoker.AddResumeGameplayListener(listener);
+        }
+    }
+
+    public static void AddResumeGamplayListeners(UnityAction listener)
+    {
+        resumeGameplayListerners.Add(listener);
+        foreach (MenuManager invoker in resumeGameplayInvokers)
+        {
+            invoker.AddResumeGameplayListener(listener);
+        }
+    }
+
 }

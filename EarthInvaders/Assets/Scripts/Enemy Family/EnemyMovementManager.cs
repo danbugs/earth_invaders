@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class EnemyMovementManager : MonoBehaviour {
     
@@ -15,6 +16,7 @@ public class EnemyMovementManager : MonoBehaviour {
     void Start () {
         BuildMovement();
         EventManager.AddEnemyMoveInvoker(this);
+        EventManager.AddChangeLevelListener(BuildMovement);
         InvokeRepeating("Move", Constants.EnemyReadyClock, Constants.EnemyReadyClock);
 
 	}
@@ -49,16 +51,34 @@ public class EnemyMovementManager : MonoBehaviour {
     void BuildMovement()
     {
         moveRight = new List<int>();
-        moveRight.Add(0);
-        moveRight.Add(1);
-        moveRight.Add(6);
-        moveRight.Add(7);
-
         moveLeft = new List<int>();
-        moveLeft.Add(3);
-        moveLeft.Add(4);
-        moveLeft.Add(9);
-        moveLeft.Add(10);
+
+        if(SceneManager.GetActiveScene().name.Equals("Level1"))
+        {
+            moveRight.Clear();
+            moveLeft.Clear();
+
+            moveRight.Add(0);
+            moveRight.Add(1);
+            moveRight.Add(6);
+            moveRight.Add(7);
+
+            moveLeft.Add(3);
+            moveLeft.Add(4);
+            moveLeft.Add(9);
+            moveLeft.Add(10);  
+        }
+        else if(SceneManager.GetActiveScene().name.Equals("Level2"))
+        {
+            moveRight.Clear();
+            moveLeft.Clear();
+
+            moveRight.Add(0);
+            moveRight.Add(2);
+
+            moveLeft.Add(4);
+            moveLeft.Add(6); 
+        }
     }
 
     // event related methods

@@ -8,6 +8,7 @@ public static class Constants {
     public static int PlayerSpeed = 10;
     public static int PlayerDamage = 10;
     public static int PlayerProjectileSpeed = 10;
+    public static int MaxPlayerHealth = 1000;
 
     // Protector Constants
     public static int ProtectorPoints = 100;

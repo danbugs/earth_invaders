@@ -5,7 +5,11 @@ using UnityEngine;
 public enum Menus 
 {
     MainMenu,
-    EarthInvaders,
-    GameOver
+    Level1,
+    GameOver,
+    HelpMenu,
+    Level2,
+    GameWin,
+    Levels
 }
 

@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
-public class EnemyGraphBuilder : MonoBehaviour {
-
+public class EnemyGraphBuilder : MonoBehaviour
+{
+    
     const int xDistance = 2;
     const int yDistance = 2;
 
@@ -22,6 +24,8 @@ public class EnemyGraphBuilder : MonoBehaviour {
     static EnemyGraph<Enemy> enemyGraph;
     EnemyShoot enemyShootEvent = new EnemyShoot();
     List<EnemyNode<Enemy>> enemiesCurrentlyShooting = new List<EnemyNode<Enemy>>();
+    AllEnemiesDead allEnemiesDeadEvent = new AllEnemiesDead();
+    GameWin gameWinEvent = new GameWin();
 
     public static EnemyGraph<Enemy> EnemyGraph
     {
@@ -92,13 +96,24 @@ public class EnemyGraphBuilder : MonoBehaviour {
 
     }
     // Use this for initialization
-    void Start () {
-
+    void Start()
+    {
+        
         EventManager.AddEnemyShootInvoker(this);
-	}
+        EventManager.AddAllEnemiesDeadInvokers(this);
+        EventManager.AddGameWinInvokers(this);
+    }
 
     private void Update()
     {
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length.Equals(0) && !SceneManager.GetActiveScene().name.Equals("Level2"))
+        {
+            allEnemiesDeadEvent.Invoke();
+        }
+        else if(GameObject.FindGameObjectsWithTag("Enemy").Length.Equals(0) && SceneManager.GetActiveScene().name.Equals("Level2"))
+        {
+            gameWinEvent.Invoke();
+        }
     }
 
     void EnemyDead(Enemy enemy)
@@ -107,11 +122,12 @@ public class EnemyGraphBuilder : MonoBehaviour {
 
         //print(toBeRemoved.Value.ID + " has " + toBeRemoved.Count + " neighbors");
 
-        foreach(EnemyNode<Enemy> node in enemyGraph.Nodes)
+        foreach (EnemyNode<Enemy> node in enemyGraph.Nodes)
         {
-            if (node.Neighbors.Contains(toBeRemoved)){
+            if (node.Neighbors.Contains(toBeRemoved))
+            {
                 node.RemoveNeighbor(toBeRemoved);
-                if(node.Neighbors.Count == 0 && ( node.Value.Type == "Soldier" || node.Value.Type == "Commander") && node != toBeRemoved && !enemiesCurrentlyShooting.Contains(node))
+                if (node.Neighbors.Count == 0 && (node.Value.Type == "Soldier" || node.Value.Type == "Commander") && node != toBeRemoved && !enemiesCurrentlyShooting.Contains(node))
                 {
                     enemiesCurrentlyShooting.Add(node);
                     enemyShootEvent.Invoke(node.Value.id);
@@ -130,5 +146,12 @@ public class EnemyGraphBuilder : MonoBehaviour {
     {
         enemyShootEvent.AddListener(listener);
     }
-
+    public void AddAllEnemiesdeadListener(UnityAction listener)
+    {
+        allEnemiesDeadEvent.AddListener(listener);
+    }
+    public void AddGameWinListener(UnityAction listener)
+    {
+        gameWinEvent.AddListener(listener);
+    }
 }

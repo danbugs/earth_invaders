@@ -9,9 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 6316de4cf231645f7ba1678d99a33fa4
   - enabled: 1
-    path: Assets/Scenes/Earth Invaders.unity
+    path: Assets/Scenes/Levels.unity
+    guid: f9c2c1c66b59c43469168dd4a6f888cb
+  - enabled: 1
+    path: Assets/Scenes/HelpMenu.unity
+    guid: ea28695300d65465e900b55c106bd0c4
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 821be939fc1324001bdb500f26c5eb19
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 4061811bfe4564fdebde2764a158efb4
+  - enabled: 1
+    path: Assets/Scenes/GameWin.unity
+    guid: fcbc702d8af2a4822b01318058dcc5c3
   m_configObjects: {}

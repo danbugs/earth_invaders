@@ -73,6 +73,8 @@
     <Compile Include="Assets\Scripts\Enemy Family\EnemyNode.cs" />
     <Compile Include="Assets\Scripts\Enemy Family\Protector.cs" />
     <Compile Include="Assets\Scripts\Enemy Family\Soldier.cs" />
+    <Compile Include="Assets\Scripts\Events\AllEnemiesDead.cs" />
+    <Compile Include="Assets\Scripts\Events\ChangeLevel.cs" />
     <Compile Include="Assets\Scripts\Events\EnemyDead.cs" />
     <Compile Include="Assets\Scripts\Events\EnemyFire.cs" />
     <Compile Include="Assets\Scripts\Events\EnemyMove.cs" />
@@ -80,11 +82,15 @@
     <Compile Include="Assets\Scripts\Events\EnemyShoot.cs" />
     <Compile Include="Assets\Scripts\Events\EventManager.cs" />
     <Compile Include="Assets\Scripts\Events\GameOver.cs" />
+    <Compile Include="Assets\Scripts\Events\GameWin.cs" />
     <Compile Include="Assets\Scripts\Events\Hurt.cs" />
     <Compile Include="Assets\Scripts\Events\PlayerShoot.cs" />
+    <Compile Include="Assets\Scripts\Events\ResetPlayerHealth.cs" />
+    <Compile Include="Assets\Scripts\Events\ResumeGameplay.cs" />
     <Compile Include="Assets\Scripts\HUD.cs" />
     <Compile Include="Assets\Scripts\Menus\MenuManager.cs" />
     <Compile Include="Assets\Scripts\Menus\Menus.cs" />
+    <Compile Include="Assets\Scripts\PauseGame.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerShootingManager.cs" />
     <Compile Include="Assets\Scripts\Projectile Family\CommanderProjectile.cs" />
