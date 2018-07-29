@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\Events\EventManager.cs" />
     <Compile Include="Assets\Scripts\Events\GameOver.cs" />
     <Compile Include="Assets\Scripts\Events\GameWin.cs" />
+    <Compile Include="Assets\Scripts\Events\HitWall.cs" />
     <Compile Include="Assets\Scripts\Events\Hurt.cs" />
     <Compile Include="Assets\Scripts\Events\PlayerShoot.cs" />
     <Compile Include="Assets\Scripts\Events\ResetPlayerHealth.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Assets\Scripts\Projectile Family\SoldierProjectile.cs" />
     <Compile Include="Assets\Scripts\ScreenUtils.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
+    <Compile Include="Assets\Scripts\Wall.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/chiarld/Code/Unity/EarthInvaders/EarthInvaders/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

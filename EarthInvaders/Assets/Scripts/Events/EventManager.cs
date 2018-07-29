@@ -252,4 +252,27 @@ public static class EventManager {
         }
     }
 
+    //HitWall support
+
+    static List<Wall> hitWallInvokers = new List<Wall>();
+    static List<UnityAction> hitWallListeners = new List<UnityAction>();
+
+    public static void AddHitWallInvokers(Wall invoker)
+    {
+        hitWallInvokers.Add(invoker);
+        foreach (UnityAction listener in hitWallListeners)
+        {
+            invoker.AddHitWallListener(listener);
+        }
+    }
+
+    public static void AddHitWallListeners(UnityAction listener)
+    {
+        hitWallListeners.Add(listener);
+        foreach (Wall invoker in hitWallInvokers)
+        {
+            invoker.AddHitWallListener(listener);
+        }
+    }
+
 }

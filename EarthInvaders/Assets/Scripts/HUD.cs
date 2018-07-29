@@ -29,6 +29,7 @@ public class HUD : MonoBehaviour
         EventManager.AddHurtListeners(UpdateHealth);
         EventManager.AddGameOverInvokers(this);
         EventManager.AddResetPlayerHealthListeners(ResetHealth);
+        EventManager.AddHitWallListeners(HitWall);
         playerHealthDisplay.text = playerHealthPrefix + playerHealth.ToString();
     }
 
@@ -63,4 +64,11 @@ public class HUD : MonoBehaviour
     {
         gameOverEvent.AddListener(listener);
     }
+
+    void HitWall()
+    {
+        gameOverEvent.Invoke(0);
+        gameFinished = true;
+    }
+
 }
