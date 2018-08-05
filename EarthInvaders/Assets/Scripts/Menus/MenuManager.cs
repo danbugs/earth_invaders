@@ -43,6 +43,7 @@ public class MenuManager : MonoBehaviour {
         Time.timeScale = 1;
         HUD.PlayerHealth = Constants.MaxPlayerHealth; // fix this with reserPlayerHealth event later (resetPlayerHealthEvent.Invoke();)
         SceneManager.LoadScene("Level1");
+        AudioManager.PlayAudio(SFXs.click);
         UpdateScene();
     }
 
@@ -50,6 +51,7 @@ public class MenuManager : MonoBehaviour {
     {
         UpdateScene();
         SceneManager.LoadScene("HelpMenu");
+        AudioManager.PlayAudio(SFXs.click);
         UpdateScene();
     }
 
@@ -57,6 +59,7 @@ public class MenuManager : MonoBehaviour {
     {
         UpdateScene();
         SceneManager.LoadScene("MainMenu");
+        AudioManager.PlayAudio(SFXs.click);
         UpdateScene();
     }
 
@@ -64,6 +67,7 @@ public class MenuManager : MonoBehaviour {
     {
         UpdateScene();
         SceneManager.LoadScene("Levels");
+        AudioManager.PlayAudio(SFXs.click);
         UpdateScene();
     }
 
@@ -72,6 +76,7 @@ public class MenuManager : MonoBehaviour {
         UpdateScene();
         Time.timeScale = 1;
         HUD.PlayerHealth = Constants.MaxPlayerHealth; // fix this with reserPlayerHealth event later (resetPlayerHealthEvent.Invoke();)
+        AudioManager.PlayAudio(SFXs.click);
         SceneManager.LoadScene("Level1");
         UpdateScene();
     }
@@ -81,6 +86,7 @@ public class MenuManager : MonoBehaviour {
         UpdateScene();
         Time.timeScale = 1;
         HUD.PlayerHealth = Constants.MaxPlayerHealth; // fix this with reserPlayerHealth event later (resetPlayerHealthEvent.Invoke();)
+        AudioManager.PlayAudio(SFXs.click);
         SceneManager.LoadScene("Level2");
         UpdateScene();
     }
@@ -89,12 +95,14 @@ public class MenuManager : MonoBehaviour {
     {
         UpdateScene();
         SceneManager.LoadScene("MainMenu");
+        AudioManager.PlayAudio(SFXs.click);
         UpdateScene();
     }
 
     public void Resume()
     {
         GameObject.FindGameObjectWithTag("Pause").SetActive(false);
+        AudioManager.PlayAudio(SFXs.click);
         Time.timeScale = 1;
     }
 
@@ -103,6 +111,7 @@ public class MenuManager : MonoBehaviour {
         UpdateScene();
         changeLevelEvent.Invoke();
         SceneManager.LoadScene("Level2");
+        AudioManager.PlayAudio(SFXs.passedLevel);
         UpdateScene();
     }
 
@@ -110,6 +119,7 @@ public class MenuManager : MonoBehaviour {
     {
         UpdateScene();
         SceneManager.LoadScene("GameWin");
+        AudioManager.PlayAudio(SFXs.gameWin);
         UpdateScene();
     }
 
@@ -118,6 +128,7 @@ public class MenuManager : MonoBehaviour {
     {
         UpdateScene();
         SceneManager.LoadScene("GameOver");
+        AudioManager.PlayAudio(SFXs.gameOver);
         UpdateScene();
     }
 

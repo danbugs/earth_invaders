@@ -33,5 +33,6 @@ public class Soldier : Enemy {
     void SoldierShoot()
     {
         GameObject projectile = Instantiate(Resources.Load<GameObject>("Soldier Projectile"), transform.position, Quaternion.identity) as GameObject;
+        AudioManager.PlayAudio(SFXs.soldier);
     }
 }

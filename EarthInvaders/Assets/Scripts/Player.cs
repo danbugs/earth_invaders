@@ -47,6 +47,7 @@ public class Player : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.Space))
         {
             playerShootEvent.Invoke(position, Characters.Player);
+            AudioManager.PlayAudio(SFXs.player);
         }
     }
 

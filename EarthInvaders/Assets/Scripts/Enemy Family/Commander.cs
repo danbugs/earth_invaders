@@ -26,7 +26,7 @@ public class Commander : Enemy {
     {
         if (this.ID == checkId)
         {
-            GameObject projectile = Instantiate(Resources.Load<GameObject>("Commander Projectile"), transform.position, Quaternion.identity) as GameObject;
+            GameObject projectile = Instantiate(Resources.Load<GameObject>("Commander Projectile"), transform.position, Quaternion.identity) as GameObject;            AudioManager.PlayAudio(SFXs.commander);
             currentlyShooting = true;
         }
     }
@@ -34,5 +34,6 @@ public class Commander : Enemy {
     void CommanderShoot()
     {
         GameObject projectile = Instantiate(Resources.Load<GameObject>("Commander Projectile"), transform.position, Quaternion.identity) as GameObject;
+        AudioManager.PlayAudio(SFXs.commander);
     }
 }

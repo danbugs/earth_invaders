@@ -1,6 +1,6 @@
 WebGL
 PlayerPath?
-/Users/chiarld/Code/Unity/EarthInvaders/EarthInvaders/Builds/build2
+/Users/chiarld/Code/Unity/EarthInvaders/EarthInvaders/Builds/build3
 SceneListBegin?
 Assets/Scenes/MainMenu.unity
 Assets/Scenes/Levels.unity
@@ -299,3 +299,4 @@ a924c90a95cf65003f662aa5e30abb6b Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 01e6f145049f3a676df6dc247eabf176 Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehaviour
 3d1b89310e77c34bc0c8d7132231345c Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Wall
