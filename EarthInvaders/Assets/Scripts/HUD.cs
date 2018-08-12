@@ -56,7 +56,6 @@ public class HUD : MonoBehaviour
     void ResetHealth()
     {
         playerHealth = Constants.MaxPlayerHealth;
-        Debug.Log(playerHealth);
         playerHealthDisplay.text = playerHealthPrefix + playerHealth.ToString();
 
     }

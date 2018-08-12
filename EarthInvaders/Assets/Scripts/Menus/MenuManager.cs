@@ -13,6 +13,7 @@ public class MenuManager : MonoBehaviour {
 
     private void Awake()
     {
+        PointsManager.Points = 0;
         if(GameObject.FindGameObjectsWithTag("MenuManager").Length > 1) // we already have a menu manager
         {
             GameObject previousMenuManager = GameObject.FindGameObjectsWithTag("MenuManager")[0];
