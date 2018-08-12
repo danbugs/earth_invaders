@@ -116,7 +116,7 @@ public class EnemyGraphBuilder : MonoBehaviour
         }
     }
 
-    void EnemyDead(Enemy enemy)
+    void EnemyDead(Enemy enemy, int unused)
     {
         EnemyNode<Enemy> toBeRemoved = enemyGraph.Find(enemy);
 

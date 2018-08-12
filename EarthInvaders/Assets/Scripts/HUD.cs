@@ -13,6 +13,7 @@ public class HUD : MonoBehaviour
     [SerializeField]
     Text pointsDisplay;
     string playerHealthPrefix = "Health: ";
+    string pointsPrefix = "Points: ";
     bool gameFinished = false;
 
     GameOver gameOverEvent = new GameOver();
@@ -30,7 +31,10 @@ public class HUD : MonoBehaviour
         EventManager.AddGameOverInvokers(this);
         EventManager.AddResetPlayerHealthListeners(ResetHealth);
         EventManager.AddHitWallListeners(HitWall);
+        EventManager.AddEnemyDeadListener(AddPoints);
         playerHealthDisplay.text = playerHealthPrefix + playerHealth.ToString();
+        pointsDisplay.text = pointsPrefix + PointsManager.Points.ToString();
+
     }
 
     // Update is called once per frame
@@ -70,5 +74,12 @@ public class HUD : MonoBehaviour
         gameOverEvent.Invoke(0);
         gameFinished = true;
     }
+
+    void AddPoints(Enemy unused, int pointsGained)
+    {
+        PointsManager.Points += pointsGained;
+        pointsDisplay.text = pointsPrefix + PointsManager.Points.ToString();
+    }
+
 
 }

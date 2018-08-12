@@ -17,6 +17,7 @@ public abstract class Enemy : MonoBehaviour {
     protected BoxCollider2D boxCollider2D;
     protected SpriteRenderer spriteRenderer;
 
+
     EnemyDead enemyDeadEvent = new EnemyDead();
     EnemyReady enemyReadyEvent = new EnemyReady();
 
@@ -57,7 +58,6 @@ public abstract class Enemy : MonoBehaviour {
         EventManager.AddEnemyMoveListener(Move);
         EventManager.AddEnemyShootListener(Shoot);
 
-
 	}
 
     // Update is called once per frame
@@ -71,7 +71,18 @@ public abstract class Enemy : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        enemyDeadEvent.Invoke(this);
+        switch(type)
+        {
+            case "Commander": 
+                enemyDeadEvent.Invoke(this, Constants.CommanderPoints);
+                break;
+            case "Soldier":
+                enemyDeadEvent.Invoke(this, Constants.SoldierPoints);
+                break;
+            case "Protector":
+                enemyDeadEvent.Invoke(this, Constants.ProtectorPoints);
+                break;
+        }
         Destroy(gameObject);
     }
 
@@ -100,7 +111,7 @@ public abstract class Enemy : MonoBehaviour {
 
     // event related methods
 
-    public void AddEnemyDeadListener(UnityAction<Enemy> listener)
+    public void AddEnemyDeadListener(UnityAction<Enemy, int> listener)
     {
         enemyDeadEvent.AddListener(listener);
     }
