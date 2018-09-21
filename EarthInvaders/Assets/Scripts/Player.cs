@@ -71,4 +71,12 @@ public class Player : MonoBehaviour {
     {
         playerShootEvent.AddListener(listener);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            HUD.PlayerHealth = 0;
+        }
+    }
 }

@@ -1,0 +1,3 @@
+Temp/* linguist-vendored
+Library/* linguist-vendored
+*.js linguist-language=csharp

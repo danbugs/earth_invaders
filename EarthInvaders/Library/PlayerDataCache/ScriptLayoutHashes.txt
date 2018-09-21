@@ -1,6 +1,6 @@
 WebGL
 PlayerPath?
-/Users/chiarld/Code/Unity/EarthInvaders/EarthInvaders/Builds/build5
+/Users/chiarld/Code/Unity/EarthInvaders/EarthInvaders/Builds/earthInvaders
 SceneListBegin?
 Assets/Scenes/MainMenu.unity
 Assets/Scenes/Levels.unity
